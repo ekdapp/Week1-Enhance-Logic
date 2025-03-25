@@ -1,6 +1,7 @@
 class Bank {
-  constructor(bank){
-    this.bankName = bank;
+  constructor(name){
+    this.bankName = name;
+    this.bankAccount = [];
   }
 
   register(memberName, memberType, balance) {
@@ -13,6 +14,9 @@ class Bank {
         account.accountNumber = accountNumber;
         account.balance = balance;
         memberName.bankAccount = account;
+
+        this.bankAccount.push(memberName);
+
 
         return `Selamat datang ke ${this.bankName}, ${userName}. Nomor Akun anda adalah ${accountNumber}. Total saldo adalah 54000`
       } else{
@@ -27,6 +31,8 @@ class Bank {
         account.accountNumber = accountNumber;
         account.balance = balance;
         memberName.bankAccount = account;
+
+        this.bankAccount.push(memberName);
 
         return `Selamat datang ke ${this.bankName}, ${userName}. Nomor Akun anda adalah ${accountNumber}. Total saldo adalah 54000`
       } else{
@@ -207,4 +213,13 @@ console.log(nadiaAccount)
 //     }
 //   ],
 //   type: 'platinum'
+// }
+
+console.log(yudhistiraBank);
+// Bank {
+//   bankName: 'Yudhistira Bank',
+//   bankAccount: [
+//     Person { name: 'Nadia', bankAccount: [Platinum] },
+//     Person { name: 'Semmi Verian', bankAccount: [Silver] }
+//   ]
 // }
